@@ -389,8 +389,8 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
-      "vrml": ""
+      "step": "export/model3d/vibio-button.step",
+      "vrml": "export/model3d/vibio-button.wrl"
     },
     "page_layout_descr_file": ""
   },
