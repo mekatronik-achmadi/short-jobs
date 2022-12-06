@@ -10,7 +10,7 @@ This tutorial should be reproducible on Arch based distro like Manjaro, Endeavor
 
 For Windows or other distro, do your own work. Sorry
 
-**Assumption**:
+**Assumptions**:
 - You know how to using terminal emulator program in your distro OS
 - You are familiar with Arch Build System and PKGBUILD in general
 - You have sufficient disk and decent internet connection
@@ -21,9 +21,9 @@ For Windows or other distro, do your own work. Sorry
         - [Setup Docker](#setup-docker)
         - [Install Image](#install-image)
         - [Running Image](#running-image)
-    - [RaspberryPi]()
-- [Editor]()
-    - [Install]()
+    - [RaspberryPi](#raspberrypi)
+- [Editor](#editor)
+    - [Install Editor](#install-editor)
     - [Running]()
 
 ## Runtime
@@ -96,4 +96,44 @@ Next, you can run docker image using command
 
 ```sh
 docker run -it --rm --privileged -p 8080:8080 -v /dev/ttyACM0:/dev/ttyACM0 openplc:v3
+```
+
+### RaspberryPi
+
+Coming Soon. Maybe
+
+## Editor
+
+OpenPLC Editor is an IDE capable of creating programs for the OpenPLC Runtime.
+
+### Install Editor
+
+Here a PKGBUILD to install the editor
+
+```
+pkgname=openplc-editor
+pkgver=VERSION
+pkgrel=1
+pkgdesc="IDE capable of creating programs for the OpenPLC Runtime"
+arch=('any')
+url="https://github.com/thiagoralves/OpenPLC_Editor"
+license=('Custom')
+depends=()
+makedepends=('git')
+optdepends=('docker: recommended runtime format')
+source=("${pkgname}::git+${url}.git")
+sha256sums=('SKIP')
+
+pkgver() {
+	cd ${srcdir}/${pkgname}
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd ${srcdir}/${pkgname}
+}
+
+package() {
+	cd ${srcdir}/${pkgname}
+}
 ```
