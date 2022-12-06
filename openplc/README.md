@@ -108,18 +108,26 @@ OpenPLC Editor is an IDE capable of creating programs for the OpenPLC Runtime.
 
 ### Install Editor
 
-Here a PKGBUILD to install the editor
+First, you may need install **base-devel** group using command:
+
+```sh
+sudo pacman -S base-devel
+```
+
+Next, use this PKGBUILD to install the editor
 
 ```
 pkgname=openplc-editor
-pkgver=VERSION
+pkgver=r195.64b3e0a
 pkgrel=1
 pkgdesc="IDE capable of creating programs for the OpenPLC Runtime"
 arch=('any')
 url="https://github.com/thiagoralves/OpenPLC_Editor"
 license=('Custom')
-depends=()
+depends=('python-wxpython' 'python-pyserial' 'python-zeroconf'
+    'python-numpy' 'python-matplotlib' 'python-lxml' 'python-pyro')
 makedepends=('git')
+options=('!strip')
 optdepends=('docker: recommended runtime format')
 source=("${pkgname}::git+${url}.git")
 sha256sums=('SKIP')
@@ -131,9 +139,36 @@ pkgver() {
 
 build() {
 	cd ${srcdir}/${pkgname}
+
+    cd matiec/
+    autoreconf -i
+    ./configure
+    make -j$(nproc) -s
 }
 
 package() {
 	cd ${srcdir}/${pkgname}
+
+    cd matiec
+    cp -f ./iec2c ../editor/arduino/bin/
+
+    cd ../
+    mkdir -p ${pkgdir}/opt/openplc/
+    cp -rf editor/ ${pkgdir}/opt/openplc/
+    mkdir -p ${pkgdir}/opt/openplc/matiec/
+    cp -rf matiec/lib/ ${pkgdir}/opt/openplc/matiec/
+
+    mkdir -p ${pkgdir}/usr/bin/
+    echo "python /opt/openplc/editor/Beremiz.py" > ${pkgdir}/usr/bin/openplc_editor.sh
+    chmod a+x ${pkgdir}/usr/bin/openplc_editor.sh
+
+    mkdir -p ${pkgdir}/usr/share/applications/
+    echo "[Desktop Entry]
+Name=OpenPLC Editor
+Categories=Development;
+Exec=openplc_editor.sh
+Icon=/opt/openplc/editor/images/brz.png
+Type=Application
+Terminal=false" > ${pkgdir}/usr/share/applications/OpenPLC_Editor.desktop
 }
 ```
