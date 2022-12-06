@@ -24,7 +24,7 @@ For Windows or other distro, do your own work. Sorry
     - [RaspberryPi](#raspberrypi)
 - [Editor](#editor)
     - [Install Editor](#install-editor)
-    - [Running]()
+    - [Running Editor](#running-editor)
 
 ## Runtime
 
@@ -98,6 +98,10 @@ Next, you can run docker image using command
 docker run -it --rm --privileged -p 8080:8080 -v /dev/ttyACM0:/dev/ttyACM0 openplc:v3
 ```
 
+You can check if webserver run in address: http://0.0.0.0:8080/
+
+![images](images/plcserver.png?raw=true)
+
 ### RaspberryPi
 
 Coming Soon. Maybe
@@ -118,18 +122,18 @@ Next, use this PKGBUILD to install the editor
 
 ```
 pkgname=openplc-editor
-pkgver=r195.64b3e0a
+pkgver=r101.6450e4f
 pkgrel=1
 pkgdesc="IDE capable of creating programs for the OpenPLC Runtime"
 arch=('any')
 url="https://github.com/thiagoralves/OpenPLC_Editor"
 license=('Custom')
-depends=('python-wxpython' 'python-pyserial' 'python-zeroconf'
-    'python-numpy' 'python-matplotlib' 'python-lxml' 'python-pyro')
+depends=('python-wxpython' 'python-pyserial' 'python-zeroconf' 'python-simplejson'
+    'python-numpy' 'python-matplotlib' 'python-lxml' 'python-future')
 makedepends=('git')
 options=('!strip')
 optdepends=('docker: recommended runtime format')
-source=("${pkgname}::git+${url}.git")
+source=("${pkgname}::git+https://github.com/thiagoralves/OpenPLC_Editor#branch=dev-python3")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -172,3 +176,18 @@ Type=Application
 Terminal=false" > ${pkgdir}/usr/share/applications/OpenPLC_Editor.desktop
 }
 ```
+
+### Running Editor
+
+You can run the editor either from your desktop menu, or using command:
+
+```sh
+openplc_editor
+```
+
+![images](images/plceditor.png?raw=true)
+
+**WARNING**: At this point, I still has no idea how to use this editor program.
+More importantly, how to connect between editor and runtime docker.
+The PLC console keep crashing without obvious error message.
+It feels still very experimental and not ready to use. 
