@@ -177,6 +177,16 @@ Terminal=false" > ${pkgdir}/usr/share/applications/OpenPLC_Editor.desktop
 }
 ```
 
+Save content above in a folder as PKGBUILD file.
+
+Then you open terminal in that folder and type command:
+
+```sh
+makepkg -sir
+```
+
+Wait until build finished and then install.
+
 ### Running Editor
 
 You can run the editor either from your desktop menu, or using command:
@@ -190,4 +200,4 @@ openplc_editor
 **WARNING**: At this point, I still has no idea how to use this editor program.
 More importantly, how to connect between editor and runtime docker.
 The PLC console keep crashing without obvious error message.
-It feels still very experimental and not ready to use. 
+It feels still very experimental and not ready to use.
