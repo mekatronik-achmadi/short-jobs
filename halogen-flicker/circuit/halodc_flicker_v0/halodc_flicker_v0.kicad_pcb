@@ -600,10 +600,10 @@
       (net 11 "SCK") (pinfunction "PB2") (pintype "bidirectional") (tstamp 529740e2-0a01-4e12-9e87-80f8de05df00))
     (pad "8" smd rect (at 3.65 -1.905) (size 1.7 0.65) (layers "F.Cu" "F.Paste" "F.Mask")
       (net 1 "+5V") (pinfunction "VCC") (pintype "power_in") (tstamp 4416a51c-9890-4381-b0cd-6fd4676ec6cd))
-    (model "${KICAD6_3DMODEL_DIR}/Package_SO.3dshapes/SOIC-8W_5.3x5.3mm_P1.27mm.wrl"
+    (model "${KIPRJMOD}/3d/ATTINY13A-SH.step"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 0))
     )
   )
 
@@ -1151,10 +1151,10 @@
       (net 13 "+12V") (pinfunction "Pin_2") (pintype "passive") (tstamp a888bc0e-3936-4bf7-b5b8-bcbbc2970ac9))
     (pad "3" thru_hole oval (at 10 0) (size 1.98 3.96) (drill 1.32) (layers "*.Cu" "*.Mask")
       (net 5 "GNDREF") (pinfunction "Pin_3") (pintype "passive") (tstamp cbcfe327-efc3-450c-8d5a-2a825d785d77))
-    (model "${KICAD6_3DMODEL_DIR}/TerminalBlock.3dshapes/TerminalBlock_Altech_AK300-3_P5.00mm.wrl"
-      (offset (xyz 0 0 0))
+    (model "${KIPRJMOD}/3d/Screw Terminal Block 5mm 3-way.step"
+      (offset (xyz 5 0 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 0))
     )
   )
 
