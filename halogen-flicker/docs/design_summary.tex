@@ -36,7 +36,7 @@
 
 	\lhead{Achmadi}
 	\chead{\today}
-	\rhead{Specification Document}
+	\rhead{Design Summary}
 
 	\onecolumn
 	\begin{figure}
@@ -129,104 +129,35 @@ int main(void)
 	\includepdf[pages=-]{images/halodc_flicker_v0.pdf}
 	
 	\includepdf[pages=-]{images/halodc_flicker_v0__Assembly.pdf}
-
-%	\section{Repository URLs}
-%
-%	\begin{itemize}
-%		\item PCB Design: \url{https://github.com/deninur2427/ecu_pnm/tree/main/circuits/ecupnm_f051r8}
-%
-%		\item Firmware: \url{https://github.com/deninur2427/ecu_pnm/tree/main/firmware/}
-%
-%		\item Interface: \url{https://github.com/deninur2427/ecu_pnm/tree/main/interface/ecu_view/}
-%
-%		\item Overall Repository: \url{https://github.com/deninur2427/ecu_pnm/}
-%	\end{itemize}
-%
-%	\section{Technical specification}
-%	\centering
-%	\begin{tabular}{lcr}
-%		\toprule
-%		Parts & Unit & Value \\
-%		\midrule
-%		Power voltage & $V$ & 12 \\
-%		Main Chip & & STM32Fx LQFP64 \\
-%		Storage & & Internal EEPROM \\
-%		USB  Data Interface & & USB-Serial FT232RL \\
-%		Engine Control Transistor & & IRF540N \\
-%		TPS Input & & 12-bit ADC \\
-%		PULSER Input & & Any pulsed signals \\
-%		\bottomrule
-%	\end{tabular}
-%
-%	\raggedright
-
-%	\newpage
-%	\section{Unit Preview}
-%
-%	\begin{figure}[h]
-%		\centering
-%		\begin{subfigure}{0.45\textwidth}
-%			\includegraphics[width=\textwidth]{images/ecuparts.png}
-%			\caption{Mockup}
-%		\end{subfigure}
-%		\begin{subfigure}{0.45\textwidth}
-%			\includegraphics[width=\textwidth]{images/unit.png}
-%			\caption{Actual}
-%		\end{subfigure}
-%	\end{figure}
-%
-%	\section{Electrical Wiring}
-%
-%	\begin{figure}[h]
-%		\centering
-%		\includegraphics[width=\textwidth]{images/wiring_lqfp64.png}
-%		\caption{Electrical Wiring}
-%	\end{figure}
-%
-%	\section{Schematic Design}
-%
-%	\includepdf[pages=-,angle=-90]{images/ecupnm_sch.pdf}
-%
-%	\newpage
-%	\section{Firmware Summary}
-%
-%	In Summary:
-%	\begin{itemize}
-%		\item Library Framework: ChibiOS/RT
-%
-%		\item Running Mode: Real-Time Operating System
-%
-%		\item Compiler target: GCC ARM with Newlib for STM32 LQFP64 chip-series.
-%	\end{itemize}
-%
-%	Some code snippet from \href[]{https://github.com/deninur2427/ecu_pnm/blob/main/firmware/ecu/main.c}{main.c}:
-%
-%	\begin{minted}[frame=lines,framesep=2mm,fontsize=\normalsize,bgcolor=LightGray]{c}
-%int main(void) {
-%	halInit();
-%	chSysInit();
-%
-%	ecu_MEM_Init();
-%	ecu_GPIO_Init();
-%	ecu_SHELL_Init();
-%	ecu_ICU_Init();
-%	ecu_ADC_Init();
-%	ecu_GPT_Init();
-%
-%	while (true) {
-%		ecu_SHELL_Loop();
-%		chThdSleepMilliseconds(500);
-%	}
-%}
-%	\end{minted}
-%
-%	\section{Development Progress and Notes}
-%
-%	List of Development Notes:
-%	\begin{itemize}
-%		\item \href{https://github.com/deninur2427/ecu_pnm/blob/main/docs/notes/tes_31072023.md}{July 31\textsuperscript{st}, 2023}
-%
-%		\item \href{https://github.com/deninur2427/ecu_pnm/blob/main/docs/notes/tes_24082023.md}{August 24\textsuperscript{th}, 2023}
-%	\end{itemize}
+	
+	\newpage
+	\section{Bill of Material}
+	
+	\textbf{NOTE:} Will be updated following local availability. Soon.
+	
+	\textbf{NOTE:} Will be updated including PCB assembly tools. Soon.
+	
+	\begin{table}[!ht]
+		\centering
+		\begin{tabular}{|l|l|l|l|l|l|l|l|}
+			\hline
+			Id & Designator & Footprint & Quantity & Designation & Supplier and ref & ~ & ~ \\ \hline
+			1 & R2 & R\_0805\_2012Metric\_Pad1.20x1.40mm\_HandSolder & 1 & 10K & ~ & ~ & ~ \\ \hline
+			2 & U3 & SOT-223-3\_TabPin2 & 1 & AMS1117-5.0 & ~ & ~ & ~ \\ \hline
+			3 & R1,R4,R3 & R\_0805\_2012Metric\_Pad1.20x1.40mm\_HandSolder & 3 & 100 & ~ & ~ & ~ \\ \hline
+			4 & U2 & DIP-4\_W7.62mm & 1 & PC817 & ~ & ~ & ~ \\ \hline
+			5 & C2,C3,C1 & C\_0805\_2012Metric\_Pad1.18x1.45mm\_HandSolder & 3 & 100nF & ~ & ~ & ~ \\ \hline
+			6 & D2 & D\_SMB-SMC\_Universal\_Handsoldering & 1 & D\_Schottky & ~ & ~ & ~ \\ \hline
+			7 & U1 & SOIC-8W\_5.3x5.3mm\_P1.27mm & 1 & ATtiny13A-S & ~ & ~ & ~ \\ \hline
+			8 & J4 & Molex\_KK-254\_AE-6410-04A\_1x04\_P2.54mm\_Vertical & 1 & CHARGER & ~ & ~ & ~ \\ \hline
+			9 & J1 & PinHeader\_2x03\_P2.54mm\_Vertical & 1 & ASP & ~ & ~ & ~ \\ \hline
+			10 & H2,H1 & MountingHole\_4.5mm\_Pad & 2 & MountingHole\_Pad & ~ & ~ & ~ \\ \hline
+			11 & J2 & TerminalBlock\_Altech\_AK300-3\_P5.00mm & 1 & BATT\_LAMP & ~ & ~ & ~ \\ \hline
+			12 & SW1 & SW\_DIP\_SPSTx02\_Slide\_9.78x7.26mm\_W7.62mm\_P2.54mm & 1 & SW\_DIP\_x02 & ~ & ~ & ~ \\ \hline
+			13 & Q1 & TO-220-3\_Horizontal\_TabDown & 1 & IRF540N & ~ & ~ & ~ \\ \hline
+			14 & D3,D1 & LED\_0805\_2012Metric\_Pad1.15x1.40mm\_HandSolder & 2 & LED & ~ & ~ & ~ \\ \hline
+			15 & SW2 & SW\_Tactile\_SPST\_Angled\_PTS645Vx31-2LFS & 1 & SW\_Push & ~ & ~ & ~ \\ \hline
+		\end{tabular}
+	\end{table}
 
 \end{document}
