@@ -2,14 +2,15 @@ Item,Toko,Kota,Qty,Price,Total,URL
 Dip Switch 2P,Mega Gemilang,Glodok,2,1800,3600,https://www.tokopedia.com/megagemilangglodok/dip-switch-2p
 AMS1117 5V,PCM ElekPusat,Glodok,3,3000,9000,https://www.tokopedia.com/pcmelektronik/ic-ams1117-5v-5
 D SCHOTTKY ,PCM ElekPusat,Glodok,3,1000,3000,https://www.tokopedia.com/pcmelektronik/ss310-sma-do-214ac-3a-100v-smd-schottky-rectifier-diode
-Header 1x40,PCM ElekPusat,Glodok,2,850,1700,https://www.tokopedia.com/pcmelektronik/pin-header-male-1x40-single
-IRF540N,PCM ElekPusat,Glodok,3,8000,24000,https://www.tokopedia.com/pcmelektronik/transistor-mosfet-irf-540-irf540n-irf540n
+Header 1x40 M,PCM ElekPusat,Glodok,2,850,1700,https://www.tokopedia.com/pcmelektronik/pin-header-male-1x40-single
+Header 1x40 F,PCM ElekPusat,Glodok,2,3500,7000,https://www.tokopedia.com/pcmelektronik/pin-header-male-1x40-single
+IRF540N,PCM ElekPusat,Glodok,2,8000,16000,https://www.tokopedia.com/pcmelektronik/transistor-mosfet-irf-540-irf540n-irf540n
 LED 0805,PCM ElekPusat,Glodok,6,500,3000,https://www.tokopedia.com/pcmelektronik/led-smd-biru-0805
 PC817,PCM ElekPusat,Glodok,3,750,2250,https://www.tokopedia.com/pcmelektronik/pc817-pc-817-optocoupler-pc817-sharp-original-harga-satuan
 Push On,PCM ElekPusat,Glodok,2,3000,6000,https://www.tokopedia.com/pcmelektronik/push-on
 R0805 10K,PCM ElekPusat,Glodok,3,500,1500,https://www.tokopedia.com/pcmelektronik/resistor-smd-0805-103-10k-ohm
 R0805 220,PCM ElekPusat,Glodok,6,500,3000,https://www.tokopedia.com/pcmelektronik/resistor-smd-0805-221-220-ohm
 Terminal 3P,PCM ElekPusat,Glodok,3,900,2700,https://www.tokopedia.com/pcmelektronik/terminal-pcb-block-screw-3pin-kf301
-ATTiny13a SMD,Tastronik,Bandung,3,13000,39000,https://www.tokopedia.com/tastronik/attiny13a-ssu-smd-attiny-13-attiny13-atmega-avr-marking-tipe-2
+ATTiny13a DIP,PCM ElekPusat,Glodok,2,35000,70000,https://www.tokopedia.com/tastronik/attiny13a-ssu-smd-attiny-13-attiny13-atmega-avr-marking-tipe-2
 ,,,,,,
-Total,98750,,,,,
+Total,128750,,,,,
