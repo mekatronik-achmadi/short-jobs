@@ -2,6 +2,7 @@
 MCU =  attiny13a
 
 # Processor frequency.
+# 9600000 / CKDIV8
 F_CPU = 1200000
 
 # Target file name (without extension).

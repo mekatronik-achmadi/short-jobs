@@ -1447,6 +1447,21 @@
     (uuid ef3be5b7-4c9e-4baf-b714-de3b8e8bfe57)
   )
 
+  (text_box "Use 7805 !!!"
+    (at 85.09 96.52 0) (size 15.24 3.81)
+    (stroke (width 0) (type default))
+    (fill (type none))
+    (effects (font (size 1.27 1.27)) (justify left top))
+    (uuid 5f751331-a0f7-486a-b7f1-04949f2b924b)
+  )
+  (text_box "Add pull-up R\nfor NRST !!!"
+    (at 20.32 20.32 0) (size 16.51 6.35)
+    (stroke (width 0) (type default))
+    (fill (type none))
+    (effects (font (size 1.27 1.27)) (justify left top))
+    (uuid 9631abae-9303-4a0a-aca6-d4cc2ea1f181)
+  )
+
   (text "HALOGEN CONTROL" (at 76.2 46.99 0)
     (effects (font (size 2 2) bold) (justify left bottom))
     (uuid 447949c2-2f71-42b3-948b-926b655a5060)
@@ -2200,7 +2215,7 @@
     (property "Reference" "R1" (at 90.17 31.75 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "100" (at 90.17 34.29 90)
+    (property "Value" "10K" (at 90.17 34.29 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 90.17 36.068 90)
