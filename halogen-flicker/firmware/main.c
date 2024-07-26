@@ -1,7 +1,8 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define ON_LIMIT 0
+#define USE_INPUT   0
+#define USE_CTRL    1
 
 static void io_init(void){
     DDRB |= 1<<3;
@@ -12,36 +13,32 @@ static void io_init(void){
 
 }
 
-static void lamp_on(void){
-    uint8_t cnt_on;
-
-    for(cnt_on=0;cnt_on<255;cnt_on++){
+#if USE_CTRL
+static void lamp_ctrl(void){
         PORTB |= 1<<3;
-        _delay_us(250);
+        _delay_ms(50);
 
         PORTB &= ~(1<<3);
-        _delay_us(250);
-    }
+        _delay_ms(50);
 }
-
-static void lamp_con(void){
-        lamp_on();
-        _delay_ms(100);
-
-        PORTB &= ~(1<<3);
-        _delay_ms(200);
-}
+#endif
 
 int main(void)
 {
     io_init();
 
     while (1) {
-#if ON_LIMIT
-        lamp_on();
+#if USE_INPUT
+        if(PINB & (1 << 4)) PORTB |= 1<<3;
+        else PORTB &= ~(1<<3);
 #else
-        lamp_con();
+  #if USE_CTRL
+        lamp_ctrl();
+  #else
+        PORTB |= 1<<3;
+  #endif
 #endif
+        _delay_us(500);
     }
     return 0;
 }
