@@ -522,7 +522,7 @@
     (pad "30" thru_hole circle (at 11.43 -17.78 180) (size 1.7526 1.7526) (drill 0.889) (layers "*.Cu" "*.Mask")
       (net 30 "P30") (pinfunction "D0") (pintype "bidirectional") (solder_mask_margin 0.102) (tstamp efe376f6-5235-4722-b92e-cd12b7353e0b))
     (model "${KIPRJMOD}/libs/NodeMCU/ZC563900.step"
-      (offset (xyz 0 0 0))
+      (offset (xyz 0 0 4))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
     )
